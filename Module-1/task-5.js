@@ -25,7 +25,9 @@ if (userDeliveryCountry !== null) {
   }
 }
 if (deliveryPrice) {
+  const validUserDeliveryCountry =
+    userDeliveryCountry[0].toUpperCase() + userDeliveryCountry.slice(1);
   alert(
-    `Доставка в ${userDeliveryCountry} будет стоить ${deliveryPrice} кредитов`,
+    `Доставка в ${validUserDeliveryCountry} будет стоить ${deliveryPrice} кредитов`,
   );
 }
