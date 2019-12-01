@@ -1,8 +1,12 @@
 'use strict';
 
+const Transaction = {
+  DEPOSIT: 'deposit',
+  WITHDRAW: 'withdraw',
+};
+
 const account = {
   balance: 0,
-
   transactions: [],
 
   createTransaction(amount, type) {
@@ -11,7 +15,7 @@ const account = {
 
   deposit(amount) {
     this.balance += amount;
-    const type = 'deposit';
+    const type = Transaction.DEPOSIT;
     const transaction = this.createTransaction(amount, type);
     transaction.id = '$d' + amount;
     this.transactions.push(transaction);
@@ -20,7 +24,7 @@ const account = {
   withdraw(amount) {
     if (amount > this.balance) return console.log('Недостаточно средств!');
     this.balance -= amount;
-    const type = 'withdraw';
+    const type = Transaction.WITHDRAW;
     const transaction = this.createTransaction(amount, type);
     transaction.id = '$w' + amount;
     this.transactions.push(transaction);
