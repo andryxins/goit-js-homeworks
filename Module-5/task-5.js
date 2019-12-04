@@ -36,7 +36,7 @@ class Car {
       : (this._speed = this._maxSpeed);
   }
   decelerate(value) {
-    if (value <= this._speed) this._speed -= value;
+    this._speed - value >= 0 ? (this._speed -= value) : (this._speed = 0);
   }
   drive(hours) {
     if (this._isOn) this._distance += hours * this._speed;
