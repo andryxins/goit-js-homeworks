@@ -94,12 +94,28 @@ console.log(getNamesSortedByFriendsCount(users));
 // Задание 10
 // Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
 
-const getSortedUniqueSkills = users =>
-  users.reduce((acc, user) => {
-    user.skills.forEach(skill => {
-      if (!acc.includes(skill)) acc.push(skill);
-    });
-    return acc.sort();
-  }, []);
-console.log(getSortedUniqueSkills(users));
+// const getSortedUniqueSkills = users =>
+//   users.reduce((acc, user) => {
+//     user.skills.forEach(skill => {
+//       if (!acc.includes(skill)) acc.push(skill);
+//     });
+//     return acc.sort(
+//       (a, b) => a.localeCompare(a, 'en') - b.localeCompare(a, 'en'),
+//     );
+//   }, []);
+
+const getSortedUniqueSkills = users => {
+  const uniqueSkills = [];
+  users
+    .map(user => user.skills)
+    .filter(allSkills =>
+      allSkills.forEach(skill => {
+        if (!uniqueSkills.includes(skill)) uniqueSkills.push(skill);
+      }),
+    );
+  return uniqueSkills.sort(
+    (a, b) => a.localeCompare(a, 'en') - b.localeCompare(a, 'en'),
+  );
+};
+console.table(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
