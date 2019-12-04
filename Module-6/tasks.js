@@ -104,18 +104,29 @@ console.log(getNamesSortedByFriendsCount(users));
 //     );
 //   }, []);
 
+// const getSortedUniqueSkills = users => {
+//   const uniqueSkills = [];
+//   users
+//     .map(user => user.skills)
+//     .filter(allSkills =>
+//       allSkills.forEach(skill => {
+//         if (!uniqueSkills.includes(skill)) uniqueSkills.push(skill);
+//       }),
+//     );
+//   return uniqueSkills.sort(
+//     (a, b) => a.localeCompare(a, 'en') - b.localeCompare(a, 'en'),
+//   );
+// };
+
 const getSortedUniqueSkills = users => {
-  const uniqueSkills = [];
-  users
+  return users
     .map(user => user.skills)
-    .filter(allSkills =>
-      allSkills.forEach(skill => {
-        if (!uniqueSkills.includes(skill)) uniqueSkills.push(skill);
-      }),
-    );
-  return uniqueSkills.sort(
-    (a, b) => a.localeCompare(a, 'en') - b.localeCompare(a, 'en'),
-  );
+    .reduce((allSkills, user) => [...allSkills, ...user], [])
+    .filter(
+      (skill, index, uniqueSkills) => uniqueSkills.indexOf(skill) === index,
+    )
+    .sort((a, b) => a.localeCompare(a, 'en') - b.localeCompare(a, 'en'));
 };
+
 console.table(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
