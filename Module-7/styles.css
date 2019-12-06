@@ -37,3 +37,21 @@
   font-size: 25px;
   width: 100px;
 }
+
+.task-5__container {
+  padding: 50px 0;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#name-input {
+  width: 350px;
+  height: 35px;
+  padding: 0;
+  font-size: 20px;
+}
+
+#name-input::placeholder {
+  font-size: 20px;
+}
