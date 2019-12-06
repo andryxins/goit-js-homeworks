@@ -55,3 +55,17 @@
 #name-input::placeholder {
   font-size: 20px;
 }
+
+#validation-input {
+  display: block;
+  margin: 50px auto;
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
