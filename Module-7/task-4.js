@@ -1,8 +1,8 @@
 'use strict';
 
 const counter = document.querySelector('#value');
-counter.textContent = 0;
 let counterValue = 0;
+counter.textContent = counterValue;
 const increment = document.querySelector('button[data-action="increment"]');
 const decrement = document.querySelector('button[data-action="decrement"]');
 
