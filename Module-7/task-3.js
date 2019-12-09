@@ -19,10 +19,11 @@ const images = [
 ];
 
 const gallery = document.querySelector('#gallery');
-const galleryItems = images.reduce(
-  (acc, item) => (acc += createGalleryItems(item)),
-  '',
-);
+// const galleryItems = images.reduce(
+//   (acc, item) => (acc += createGalleryItems(item)),
+//   '',
+// );
+const galleryItems = images.map(item => createGalleryItems(item)).join('');
 gallery.insertAdjacentHTML('afterbegin', galleryItems);
 function createGalleryItems({ url, alt }) {
   return `<li class="galleryItem"><img src=${url} alt=${alt}></li>`;
