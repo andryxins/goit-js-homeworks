@@ -6,8 +6,17 @@ const lightboxContent = document.querySelector('.lightbox__content');
 const closeButton = document.querySelector(
   'button[data-action="close-lightbox"]',
 );
+const imagesList = document.querySelector('.js-gallery');
 
 const actions = {
+  openLightBox(event) {
+    event.preventDefault();
+    if (event.target === event.currentTarget) return;
+    const currentImage = event.target;
+    lightBox.classList.add('is-open');
+    lightBoxImage.src = currentImage.dataset.source;
+    lightBoxImage.alt = currentImage.alt;
+  },
   closeLightBox() {
     if (lightBox.classList.contains('is-open')) {
       lightBoxImage.src = '';
@@ -15,7 +24,6 @@ const actions = {
       lightBox.classList.remove('is-open');
     }
   },
-
   swithingImagesByControls(event) {
     if (
       lightBox.classList.contains('is-open') &&
@@ -43,6 +51,7 @@ const actions = {
   },
 };
 
+imagesList.addEventListener('click', actions.openLightBox);
 closeButton.addEventListener('click', actions.closeLightBox);
 document.addEventListener('keyup', actions.closeLightBoxByEsc.bind(actions));
 document.addEventListener('keyup', actions.swithingImagesByControls);

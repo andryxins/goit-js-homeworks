@@ -4,7 +4,10 @@ import images from '../gallery-items.js';
 const galleryList = document.querySelector('.js-gallery');
 const markUp = images.map(image => renderGalleryItems(image)).join('');
 galleryList.insertAdjacentHTML('beforeend', markUp);
-const options = {};
+const options = {
+  threshold: 0.01,
+  rootMargin: '70px',
+};
 const observer = new IntersectionObserver(onEntry, options);
 const galleryItems = document.querySelectorAll('.gallery__item');
 galleryItems.forEach(item => observer.observe(item));
