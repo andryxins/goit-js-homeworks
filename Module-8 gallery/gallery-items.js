@@ -62,4 +62,46 @@ export default [
       'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
     description: 'Lighthouse Coast Sea',
   },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/12/08/09/34/winter-4680713__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/12/08/09/34/winter-4680713_960_720.jpg',
+    description: 'Winter in Mountains',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/12/08/01/08/winter-4680354__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/12/08/01/08/winter-4680354_960_720.jpg',
+    description: 'Winter in Forest',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/12/06/05/53/moon-4676676__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/12/06/05/53/moon-4676676_960_720.jpg',
+    description: 'Moon at the mountains',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/11/10/11/31/landscape-4615578__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/11/10/11/31/landscape-4615578_960_720.jpg',
+    description: 'Wolfs at the forest road',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/12/09/17/47/hochybrig-4683997__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/12/09/17/47/hochybrig-4683997_960_720.jpg',
+    description: 'Freeride mountains',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2015/03/26/10/01/snowboarder-690779__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2015/03/26/10/01/snowboarder-690779_960_720.jpg',
+    description: 'Snowboarder',
+  },
 ];
