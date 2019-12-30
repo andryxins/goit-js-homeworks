@@ -36,6 +36,7 @@ class CountdownTimer {
     );
   }
   start() {
+    this.updateClockFace();
     setInterval(() => {
       this.updateClockFace();
     }, 1000);
