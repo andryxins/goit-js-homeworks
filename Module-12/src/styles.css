@@ -1,6 +1,9 @@
 html {
   box-sizing: border-box;
 }
+body {
+  background-color: rgb(212, 212, 236);
+}
 *,
 *::before,
 *::after {
