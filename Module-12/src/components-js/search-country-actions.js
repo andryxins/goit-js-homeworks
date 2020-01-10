@@ -20,14 +20,14 @@ const actions = {
         if (data.length === 1) return this.renderingCountry(data);
         return PNotify.error({
           text: 'To many matches found! Please, enter more specific query',
-          delay: 2000,
+          delay: 3000,
         });
       })
       .catch(() =>
         PNotify.error({
           text:
             'Sory, we could not find anything. Try to enter more specific query.',
-          delay: 2000,
+          delay: 3000,
         }),
       );
   },
