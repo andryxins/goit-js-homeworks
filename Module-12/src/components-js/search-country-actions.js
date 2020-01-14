@@ -1,5 +1,5 @@
 'use strict';
-import PNotify from '../../node_modules/pnotify/dist/es/PNotify.js';
+import PNotify from 'pnotify/dist/es/PNotify.js';
 import { renderListMarkUp, renderSingleMarkUp } from './search-country-render';
 import fetchCountries from '../services-js/fetchCountries';
 const debounce = require('lodash.debounce');
@@ -10,10 +10,10 @@ const refs = {
 };
 
 const actions = {
-  countriesRequest(value) {
+  countriesRequest(e) {
     refs.output.innerHTML = '';
-    if (!value) return;
-    fetchCountries(value)
+    if (!e.target.value) return;
+    fetchCountries(e.target.value)
       .then(data => {
         if (data.length <= 10 && data.length >= 2)
           return this.renderinglist(data);
@@ -41,5 +41,5 @@ const actions = {
 
 refs.input.addEventListener(
   'input',
-  debounce(() => actions.countriesRequest(refs.input.value), 500),
+  debounce(e => actions.countriesRequest(e), 500),
 );
