@@ -13,7 +13,8 @@ class CountdownTimer {
       )),
       (this.secondsLeft = this.selector.querySelector(
         'span[data-value="secs"]',
-      ));
+      )),
+      (this.timerId = 0);
   }
 
   formattingDate(item) {
@@ -22,6 +23,7 @@ class CountdownTimer {
 
   updateClockFace() {
     const timeLeft = this.targetDate - Date.now();
+    if (timeLeft < 0) return clearInterval(this.timerId);
     this.daysLeft.textContent = this.formattingDate(
       Math.floor(timeLeft / (1000 * 60 * 60 * 24)),
     );
@@ -37,7 +39,7 @@ class CountdownTimer {
   }
   start() {
     this.updateClockFace();
-    setInterval(() => {
+    this.timerId = setInterval(() => {
       this.updateClockFace();
     }, 1000);
   }
@@ -47,13 +49,12 @@ const timer = new CountdownTimer({
   selector: '#timer-1',
   targetDate: new Date('Jul 17, 2020'),
 });
-console.log(timer);
 
 timer.start();
 
 const timer2 = new CountdownTimer({
   selector: '#timer-2',
-  targetDate: new Date('Dec 31, 2019'),
+  targetDate: new Date('Mar 28, 2020'),
 });
 
 timer2.start();
