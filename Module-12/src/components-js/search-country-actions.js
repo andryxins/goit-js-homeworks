@@ -2,7 +2,7 @@
 import PNotify from 'pnotify/dist/es/PNotify.js';
 import { renderListMarkUp, renderSingleMarkUp } from './search-country-render';
 import fetchCountries from '../services-js/fetchCountries';
-const debounce = require('lodash.debounce');
+import debounce from 'lodash.debounce';
 
 const refs = {
   input: document.querySelector('#input-user-country'),
