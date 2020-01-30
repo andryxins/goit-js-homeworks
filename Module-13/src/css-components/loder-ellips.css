@@ -1,10 +1,10 @@
 .loader-ellips {
   display: none;
-  font-size: 20px; /* change size here */
+  font-size: 40px; /* change size here */
   position: relative;
   width: 4em;
   height: 1em;
-  margin: 10px auto;
+  margin: 40px auto;
 }
 
 .loader-ellips__dot {

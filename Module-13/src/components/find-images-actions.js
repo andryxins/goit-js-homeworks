@@ -36,13 +36,13 @@ const infiniteScrollInstance = new infiniteScroll(refs.searchOutput, {
   responseType: 'text',
   history: false,
   status: '.loader-ellips',
-  checkLastPage: true,
-  scrollThreshold: 50,
+  scrollThreshold: 0,
 });
 
 infiniteScrollInstance.on('load', response => {
   const data = JSON.parse(response);
   if (data.hits.length < 1) {
+    window.scrollBy(0, -40);
     return PNotify.error({
       text: 'Sorry, we could not find anything',
       delay: 2000,
